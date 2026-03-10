@@ -1,4 +1,4 @@
-namespace TicTacToe;
+namespace Pr01_SaraYueMadrugaMartin;
 /// <summary>
 /// Funcionalidad del juego
 /// </summary>
@@ -42,39 +42,30 @@ public class TicTacToe
 
         return turno;
     }
-/// <summary>
-/// Determina que jugador ha ganado si es que algún jugador ha ganado
-/// </summary>
-/// <returns>Devuelve el jugador ganador 1 o 2 y 0 si no hay ganador</returns>
+    /// <summary>
+    /// Determina que jugador ha ganado si es que algún jugador ha ganado
+    /// </summary>
+    /// <returns>Devuelve el jugador ganador 1 o 2 y 0 si no hay ganador</returns>
     public int Ganador()
     {
-        if (turno % 2 == 0)
+        if (PartidaFinalizada(1))
         {
-            if (PartidaFinalizada(2))
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
+            return 1;
+        }
+        else if (PartidaFinalizada(2))
+        {
+            return 2;
         }
         else
         {
-            if (PartidaFinalizada(1))
-            {
-                return 2;
-            }else
-            {
-                return 0;
-            }
+            return 0;
         }
     }
-/// <summary>
-/// Nos devuelve si hay un ganador 
-/// </summary>
-/// <param name="jugador"> Recibe el jugador del cual ha sido el turno</param>
-/// <returns>Devuelve Verdadero si hay un ganador</returns>
+    /// <summary>
+    /// Nos devuelve si hay un ganador 
+    /// </summary>
+    /// <param name="jugador"> Recibe el jugador del cual ha sido el turno</param>
+    /// <returns>Devuelve Verdadero si hay un ganador</returns>
     private bool PartidaFinalizada(int jugador)
     {
         int col = 0;
