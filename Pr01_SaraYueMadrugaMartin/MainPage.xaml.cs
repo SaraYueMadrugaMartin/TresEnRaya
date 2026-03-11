@@ -76,15 +76,20 @@ public partial class MainPage : ContentPage
             {
                 winnerName = Player1Name;
                 Player1Score++;
+                Player1Victories.Text = $"Victorias: {Player1Score}"; // Actualizar numero de victorias de Player 1.
             }
             else
             {
                 winnerName = Player2Name;
                 Player2Score++;
+                Player2Victories.Text = $"Victorias: {Player2Score}"; // Actualizar numero de victorias de Player 2.
             }
 
             await Navigation.PushAsync(new ScorePage(this, winnerName, Player1Name, Player2Name, Player1Score, Player2Score));
         }
+
+        else if (turno == 9) // Si todas las casillas se han llenado y no hay ganador, entonces hay empate.
+            await Navigation.PushAsync(new ScorePage(this, "Empate", Player1Name, Player2Name, Player1Score, Player2Score));
 
         else
         {
