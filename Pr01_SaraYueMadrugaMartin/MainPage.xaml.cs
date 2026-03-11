@@ -6,20 +6,27 @@ public partial class MainPage : ContentPage
 {
     TicTacToe tictactoeplay = new TicTacToe();
 
-    public MainPage()
+    private string Player1Name;
+    private string Player2Name;
+
+    public MainPage(string player1, string player2)
     {
         InitializeComponent();
+
+        Player1Name = player1;
+        Player2Name = player2;
+
+        // Para que se vean los nombres guardados de los jugadores.
+        Player1Label.Text = Player1Name;
+        Player2Label.Text = Player2Name;
+
+        // Inicia con el jugador 1.
+        TurnLabel.Text = $"Turno de: {Player1Name}";
     }
 
-    /// <summary>
-    /// Método que se llama cuando se pulsan los botones (casillas).
-    /// </summary>
-    /// <param name="objectClicked"></param>
-    /// <param name="e"></param>
-    private async void OnCellClicked(object objectClicked, EventArgs e)
+    private async void OnCellClicked(object sender, EventArgs e)
     {
-        // Pasar la info del botón en el que se ha hecho click.
-        ImageButton boton = (ImageButton)objectClicked;
+        ImageButton boton = (ImageButton)sender;
 
         string parametro = boton.CommandParameter.ToString();
         string[] partes = parametro.Split(',');
@@ -32,11 +39,18 @@ public partial class MainPage : ContentPage
         if (turno == -1)
             return;
 
-        // Habilitar imagen correspondiente al jugador.
+        // Asignar imagen segun el jugador.
+        string currentPlayerName;
         if (turno % 2 != 0)
+        {
+            currentPlayerName = Player1Name;
             boton.Source = "img_x.png";
+        }
         else
+        {
+            currentPlayerName = Player2Name;
             boton.Source = "img_o.png";
+        }
 
         boton.IsEnabled = false;
 
@@ -45,21 +59,29 @@ public partial class MainPage : ContentPage
 
         if (winner != 0)
         {
-            TurnLabel.Text = "Ha ganado el jugador: " + winner;
+            string winnerName;
+            if (winner == 1)
+                winnerName = Player1Name;
+            else
+                winnerName = Player2Name;
+
+            TurnLabel.Text = $"¡Ha ganado: {winnerName}!";
 
             foreach (ImageButton child in TableroGrid.Children.Cast<ImageButton>())
                 child.IsEnabled = false;
+
+            await DisplayAlert("Fin de partida", $"¡Ha ganado {winnerName}!", "OK");
         }
-        else // Actualizar el nombre del jugador en el turno.
+        else
         {
-            int currentPlayer;
-
+            // Turno del siguiente jugador.
+            string nextPlayer;
             if (turno % 2 == 0)
-                currentPlayer = 1;
+                nextPlayer = Player1Name;
             else
-                currentPlayer = 2;
+                nextPlayer = Player2Name;
 
-            TurnLabel.Text = $"Turno de: Jugador {currentPlayer}";
+            TurnLabel.Text = $"Turno de: {nextPlayer}";
         }
     }
 }

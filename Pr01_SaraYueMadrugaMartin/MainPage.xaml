@@ -4,78 +4,137 @@
              x:Class="Pr01_SaraYueMadrugaMartin.MainPage"
              Shell.NavBarIsVisible="False">
 
-    <Grid Padding="50">
+    <Grid>
+        <!--Imagen de fondo.-->
+        <Image Source="img_background.jpg"
+               Aspect="AspectFill"/>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <!--TODO: poner nombres personalizados, no predefinidos.-->
-        
-        <!-- Grid superior de la pantalla:
-             - Nombres de los jugadores
-             - Turno de jugador -->
-        <Grid Grid.Row="0" ColumnSpacing="40">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <Label Text="Jugador 1"
-                   FontSize="20"
-                   HorizontalOptions="Start"/>
-            <Label Text="Jugador 2"
-                   FontSize="20"
-                   HorizontalOptions="End"
-                   Grid.Column="1"/>
-            <Label x:Name="TurnLabel"
-                   Grid.Row="0"
-                   Grid.ColumnSpan="2"
-                   Text="Turno de: Jugador 1"
-                   FontSize="20"
-                   HorizontalOptions="Center"
-                   VerticalOptions="End"/>
-        </Grid>
-
-        <!-- Grid del tablero. -->
-        <Grid x:Name="TableroGrid"
-              Grid.Row="1"
-              HorizontalOptions="Center"
-              VerticalOptions="Center"
-              RowSpacing="5"
-              ColumnSpacing="5">
+        <Grid Padding="50">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="100"/>
-            </Grid.ColumnDefinitions>
+            <!--TODO: poner nombres personalizados, no predefinidos.-->
 
-            <!-- TODO: Buscar otra forma más optima de hacer esto. (Con bucles ?) -->
-            
-            <!-- Primera fila de casillas. -->
-            <ImageButton Grid.Row="0" Grid.Column="0" Clicked="OnCellClicked" CommandParameter="0,0" BackgroundColor="DeepPink" Aspect="AspectFit"/>
-            <ImageButton Grid.Row="0" Grid.Column="1" Clicked="OnCellClicked" CommandParameter="1,0" BackgroundColor="DeepPink" Aspect="AspectFit"/>
-            <ImageButton Grid.Row="0" Grid.Column="2" Clicked="OnCellClicked" CommandParameter="2,0" BackgroundColor="DeepPink" Aspect="AspectFit"/>
+            <!-- Grid superior de la pantalla:
+                 - Nombres de los jugadores
+                 - Turno de jugador -->
+            <Grid Grid.Row="0" ColumnSpacing="40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <!-- Segunda fila de casillas. -->
-            <ImageButton Grid.Row="1" Grid.Column="0" Clicked="OnCellClicked" CommandParameter="0,1" BackgroundColor="DeepPink" Aspect="AspectFit"/>
-            <ImageButton Grid.Row="1" Grid.Column="1" Clicked="OnCellClicked" CommandParameter="1,1" BackgroundColor="DeepPink" Aspect="AspectFit"/>
-            <ImageButton Grid.Row="1" Grid.Column="2" Clicked="OnCellClicked" CommandParameter="2,1" BackgroundColor="DeepPink" Aspect="AspectFit"/>
+                <Label x:Name="Player1Label"
+                       FontSize="20"
+                       HorizontalOptions="Start"/>
 
-            <!-- Tercera fila de casillas. -->
-            <ImageButton Grid.Row="2" Grid.Column="0" Clicked="OnCellClicked" CommandParameter="0,2" BackgroundColor="DeepPink" Aspect="AspectFit"/>
-            <ImageButton Grid.Row="2" Grid.Column="1" Clicked="OnCellClicked" CommandParameter="1,2" BackgroundColor="DeepPink" Aspect="AspectFit"/>
-            <ImageButton Grid.Row="2" Grid.Column="2" Clicked="OnCellClicked" CommandParameter="2,2" BackgroundColor="DeepPink" Aspect="AspectFit"/>
+                <Label x:Name="Player2Label"
+                       FontSize="20"
+                       HorizontalOptions="End"
+                       Grid.Column="1"/>
+
+                <Label x:Name="TurnLabel"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="2"
+                       Text="Turno de: Jugador 1"
+                       FontSize="20"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"/>
+            </Grid>
+
+            <!-- Grid del tablero. -->
+            <Grid x:Name="TableroGrid"
+                  Grid.Row="1"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  RowSpacing="5"
+                  ColumnSpacing="5">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- TODO: Buscar otra forma más optima de hacer esto. (Con bucles ?) -->
+                <!-- Primera fila de casillas. -->
+                <ImageButton Grid.Row="0" Grid.Column="0"
+                             Clicked="OnCellClicked"
+                             CommandParameter="0,0"
+                             BackgroundColor="DeepPink"
+                             Aspect="AspectFit"/>
+
+                <ImageButton Grid.Row="0"
+                             Grid.Column="1"
+                             Clicked="OnCellClicked"
+                             CommandParameter="1,0"
+                             BackgroundColor="DeepPink"
+                             Aspect="AspectFit"/>
+
+                <ImageButton Grid.Row="0"
+                             Grid.Column="2"
+                             Clicked="OnCellClicked"
+                             CommandParameter="2,0"
+                             BackgroundColor="DeepPink"
+                             Aspect="AspectFit"/>
+
+                <!-- Segunda fila de casillas. -->
+                <ImageButton Grid.Row="1"
+                             Grid.Column="0"
+                             Clicked="OnCellClicked"
+                             CommandParameter="0,1"
+                             BackgroundColor="DeepPink"
+                             Aspect="AspectFit"/>
+
+                <ImageButton Grid.Row="1"
+                             Grid.Column="1"
+                             Clicked="OnCellClicked"
+                             CommandParameter="1,1"
+                             BackgroundColor="DeepPink"
+                             Aspect="AspectFit"/>
+
+                <ImageButton Grid.Row="1"
+                             Grid.Column="2"
+                             Clicked="OnCellClicked"
+                             CommandParameter="2,1"
+                             BackgroundColor="DeepPink"
+                             Aspect="AspectFit"/>
+
+                <!-- Tercera fila de casillas. -->
+                <ImageButton Grid.Row="2"
+                             Grid.Column="0"
+                             Clicked="OnCellClicked"
+                             CommandParameter="0,2"
+                             BackgroundColor="DeepPink"
+                             Aspect="AspectFit"/>
+
+                <ImageButton Grid.Row="2"
+                             Grid.Column="1"
+                             Clicked="OnCellClicked"
+                             CommandParameter="1,2"
+                             BackgroundColor="DeepPink"
+                             Aspect="AspectFit"/>
+
+                <ImageButton Grid.Row="2"
+                             Grid.Column="2"
+                             Clicked="OnCellClicked"
+                             CommandParameter="2,2"
+                             BackgroundColor="DeepPink"
+                             Aspect="AspectFit"/>
+
+            </Grid>
 
         </Grid>
+        
     </Grid>
 
 </ContentPage>
