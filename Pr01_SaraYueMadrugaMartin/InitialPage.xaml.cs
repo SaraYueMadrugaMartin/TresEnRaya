@@ -7,6 +7,11 @@ public partial class InitialPage : ContentPage
 		InitializeComponent();
 	}
 
+    /// <summary>
+    /// Metodo que se llama cuando se pulsa el botón de "Comenzar Partida".
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private async void OnStartClicked(object sender, EventArgs e)
     {
         string player1 = Player1Entry.Text?.Trim();

@@ -7,7 +7,7 @@
     <!--Nueva pagina: la primera para pedir a los jugadores los nombres.-->
     
     <Grid>
-        <Image Source="img_background.jpg"
+        <Image Source="img_initial.jpg"
                Aspect="AspectFill"/>
 
         <VerticalStackLayout Padding="30"
@@ -17,14 +17,17 @@
             <Label 
                 Text="Introduce los nombres de los jugadores"
                 FontSize="20"
+                TextColor="Black"
                 HorizontalOptions="Center" />
 
             <!-- Jugador 1 -->
             <Entry x:Name="Player1Entry"
+                   TextColor="Black"
                    Placeholder="Nombre del Jugador 1" />
 
             <!-- Jugador 2 -->
             <Entry x:Name="Player2Entry"
+                   TextColor="Black"
                    Placeholder="Nombre del Jugador 2" />
 
             <Button 
