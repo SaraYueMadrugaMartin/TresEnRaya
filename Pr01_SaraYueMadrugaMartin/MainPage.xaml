@@ -21,7 +21,8 @@
             <!-- Grid superior de la pantalla:
                  - Nombres de los jugadores
                  - Turno de jugador -->
-            <Grid Grid.Row="0" ColumnSpacing="40">
+            <Grid Grid.Row="0"
+                  ColumnSpacing="40">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -33,15 +34,23 @@
                         Padding="10"
                         HorizontalOptions="Start">
                     <VerticalStackLayout>
+                        <!--Nombre de Player 1-->
                         <Label x:Name="Player1Label"
                                FontSize="20"
                                TextColor="Black"
                                HorizontalOptions="Center"/>
+                        <!--Icono que tiene asignado Player 1-->
+                        <Image Source="img_x.jpg"
+                               HeightRequest="40"
+                               WidthRequest="40"
+                               HorizontalOptions="Center"/>
+                        <!--Victorias que lleva el Player 1-->
                         <Label x:Name="Player1Victories"
                                FontSize="16"
                                TextColor="Black"
                                HorizontalOptions="Center"
                                Text="Victorias: 0"/>
+                        
                     </VerticalStackLayout>
                 </Border>
 
@@ -51,10 +60,17 @@
                         Padding="10"
                         HorizontalOptions="End">
                     <VerticalStackLayout>
+                        <!--Nombre de Player 2-->
                         <Label x:Name="Player2Label"
                                FontSize="20"
                                TextColor="Black"
                                HorizontalOptions="Center"/>
+                        <!--Icono que tiene asignado Player 2-->
+                        <Image Source="img_o.jpg"
+                               HeightRequest="40"
+                               WidthRequest="40"
+                               HorizontalOptions="Center"/>
+                        <!--Victorias que lleva el Player 2-->
                         <Label x:Name="Player2Victories"
                                FontSize="16"
                                TextColor="Black"
@@ -71,7 +87,7 @@
                        FontSize="40"
                        TextColor="Black"
                        HorizontalOptions="Center"
-                       VerticalOptions="End"/>
+                       VerticalOptions="Center"/>
 
             </Grid>
 
@@ -172,9 +188,6 @@
                              Aspect="AspectFit"/>
 
             </Grid>
-
-        </Grid>
-        
+        </Grid>        
     </Grid>
-
 </ContentPage>

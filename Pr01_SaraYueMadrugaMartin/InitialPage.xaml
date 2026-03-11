@@ -11,28 +11,31 @@
                Aspect="AspectFill"/>
 
         <VerticalStackLayout Padding="30"
-                             Spacing="20"
+                             Spacing="30"
                              VerticalOptions="Center">
 
             <Label 
                 Text="Introduce los nombres de los jugadores"
-                FontSize="20"
+                FontSize="40"
                 TextColor="Black"
                 HorizontalOptions="Center" />
 
             <!-- Jugador 1 -->
             <Entry x:Name="Player1Entry"
                    TextColor="Black"
+                   BackgroundColor="#587FFFD4"
                    Placeholder="Nombre del Jugador 1" />
 
             <!-- Jugador 2 -->
             <Entry x:Name="Player2Entry"
                    TextColor="Black"
+                   BackgroundColor="#587FFFD4"
                    Placeholder="Nombre del Jugador 2" />
 
             <Button 
                 Text="Comenzar partida"
                 Clicked="OnStartClicked"
+                BackgroundColor="LightPink"
                 HorizontalOptions="Center"/>
 
         </VerticalStackLayout>

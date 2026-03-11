@@ -28,12 +28,12 @@
                                  HorizontalOptions="Center">
                 
                 <Label x:Name="Player1Score"
-                       FontSize="20"
+                       FontSize="30"
                        TextColor="Black"
                        HorizontalOptions="Center"/>
                 
                 <Label x:Name="Player2Score"
-                       FontSize="20"
+                       FontSize="30"
                        TextColor="Black"
                        HorizontalOptions="Center"/>
             </VerticalStackLayout>
@@ -41,6 +41,7 @@
             <!--Boton de Nueva Partida.-->
             <Button Text="Nueva partida"
                     Clicked="OnPlayAgainClicked"
+                    BackgroundColor="Beige"
                     HorizontalOptions="Center"/>
             
         </VerticalStackLayout>
