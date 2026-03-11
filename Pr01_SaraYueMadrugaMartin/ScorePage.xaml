@@ -26,26 +26,39 @@
 
             <VerticalStackLayout Spacing="10"
                                  HorizontalOptions="Center">
-                
+
                 <Label x:Name="Player1Score"
                        FontSize="30"
                        TextColor="Black"
                        HorizontalOptions="Center"/>
-                
+
                 <Label x:Name="Player2Score"
                        FontSize="30"
                        TextColor="Black"
                        HorizontalOptions="Center"/>
             </VerticalStackLayout>
+            
+            <Grid ColumnSpacing="40"
+                  HorizontalOptions="Center">
 
+                <Grid.ColumnDefinitions>
+                   <ColumnDefinition Width="Auto"/>
+                   <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
             <!--Boton de Nueva Partida.-->
-            <Button Text="Nueva partida"
+                <Button Text="Nueva partida"
                     Clicked="OnPlayAgainClicked"
                     BackgroundColor="Beige"
-                    HorizontalOptions="Center"/>
-            
+                    Grid.Column="0"/>
+                
+                <!--Boton de Salir-->
+                <Button Text="Salir"
+                    Clicked="OnExitClicked"
+                        Background="Grey"
+                    Grid.Column="1"/>
+                
+            </Grid>
         </VerticalStackLayout>
-
     </Grid>
-
 </ContentPage>

@@ -20,7 +20,10 @@ public partial class ScorePage : ContentPage
 
         mainPage = _mainPage;
 
-        WinnerLabel.Text = $"¡Ha ganado {_winner}!";
+        if (_winner == "Empate")
+            WinnerLabel.Text = "Ha habido empate...";
+        else
+            WinnerLabel.Text = $"¡Ha ganado {_winner}!";
 
         Player1Score.Text = $"{_player1}: {_player1Score}";
         Player2Score.Text = $"{_player2}: {_player2Score}";
@@ -36,5 +39,16 @@ public partial class ScorePage : ContentPage
         mainPage.NewGame(); // Llamamos al metodo de NewGame de la clase de MainPage.
 
         await Navigation.PopAsync();
+    }
+
+    /// <summary>
+    /// Metodo que se llama cuando se pulsa el botón de "Salir".
+    /// Sale de la aplicación por completo.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void OnExitClicked(object sender, EventArgs e)
+    {
+        Application.Current.Quit();
     }
 }
