@@ -10,17 +10,17 @@
                Aspect="AspectFill"/>
 
         <!--Jugadores con sus respectivas victorias.-->
-        <VerticalStackLayout Padding="30" Spacing="20"
+        <VerticalStackLayout Padding="30" Spacing="50"
                              VerticalOptions="Center"
                              HorizontalOptions="Center">
 
             <Label x:Name="WinnerLabel"
-                   FontSize="30"
+                   FontSize="50"
                    TextColor="Black"
                    HorizontalOptions="Center"/>
 
             <Label Text="Victorias"
-                   FontSize="30"
+                   FontSize="40"
                    TextColor="Black"
                    HorizontalOptions="Center"/>
 

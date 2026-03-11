@@ -68,7 +68,7 @@
                        Grid.Row="0"
                        Grid.ColumnSpan="2"
                        Text="Turno de: Jugador 1"
-                       FontSize="20"
+                       FontSize="40"
                        TextColor="Black"
                        HorizontalOptions="Center"
                        VerticalOptions="End"/>
