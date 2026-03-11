@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pr01_SaraYueMadrugaMartin.ScorePage"
+             Title="ScorePage">
+
+    <Grid>
+        <!-- Imagen de fondo. -->
+        <Image Source="img_score.jpg"
+               Aspect="AspectFill"/>
+
+        <!--Jugadores con sus respectivas victorias.-->
+        <VerticalStackLayout Padding="30" Spacing="50"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center">
+
+            <Label x:Name="WinnerLabel"
+                   FontSize="50"
+                   TextColor="Black"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Victorias"
+                   FontSize="40"
+                   TextColor="Black"
+                   HorizontalOptions="Center"/>
+
+            <VerticalStackLayout Spacing="10"
+                                 HorizontalOptions="Center">
+                
+                <Label x:Name="Player1Score"
+                       FontSize="30"
+                       TextColor="Black"
+                       HorizontalOptions="Center"/>
+                
+                <Label x:Name="Player2Score"
+                       FontSize="30"
+                       TextColor="Black"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <!--Boton de Nueva Partida.-->
+            <Button Text="Nueva partida"
+                    Clicked="OnPlayAgainClicked"
+                    BackgroundColor="Beige"
+                    HorizontalOptions="Center"/>
+            
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>

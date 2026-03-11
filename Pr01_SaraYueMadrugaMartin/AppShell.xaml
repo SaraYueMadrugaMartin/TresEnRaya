@@ -6,9 +6,9 @@
     xmlns:local="clr-namespace:Pr01_SaraYueMadrugaMartin"
     Title="Pr01_SaraYueMadrugaMartin">
 
+    <!--Cambiado para que la primera pantalla que aparezca al ejecutar, sea la inicial donde se piden los nombres de los jugadores.-->
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:InitialPage}"/>
 
 </Shell>
